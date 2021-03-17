@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <h1>{{title}}</h1>
+    <form action="/questions/{{num}}">
+       <button>Begin</button>
+    </form>
+</div>
+    
+{% endblock %}
