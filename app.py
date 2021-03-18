@@ -29,10 +29,12 @@ def save_answers():
     global num
     answer = request.form.get('answer')
     if(answer == None):
+       flash('Please choose an option in order to move on')
        return redirect(f'/questions/{num}')
     responses.append(answer)
     num += 1
     if(num == len(satisfaction_survey.questions)):
+        num = 0
         return redirect('/thankyou')
     return redirect(f'/questions/{num}')
 
